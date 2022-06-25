@@ -1,0 +1,57 @@
+﻿<Window x:Class="DemoElbrus.OrderStatus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoElbrus"
+        mc:Ignorable="d"
+        Title="OrderStatus" Height="226" Width="308">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FF76E383"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF498C51"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBlock Text="Назад" MouseDown="TextBlock_MouseDown" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label HorizontalAlignment="Center" Content="Сменить статус заказа" Foreground="#FF498C51"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="150px"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Код заказа:"/>
+                <Label Grid.Column="1" Grid.Row="0" Name="OrderCode"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="Текущий статус:"/>
+                <Label Grid.Column="1" Grid.Row="1" Name="CurStatus"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="Новый статус:"/>
+                <ComboBox Grid.Column="1" Grid.Row="2" x:Name="StatusList" SelectionChanged="StatusList_SelectionChanged">
+                    <ComboBoxItem Content="В прокате"/>
+                    <ComboBoxItem Content="Закрыта"/>
+                </ComboBox>
+            </Grid>
+            <Button x:Name="ChangeBtn" Content="Готово" Click="ChangeBtn_Click" HorizontalAlignment="Right" Width="60px" Margin="0 10 0 0"/>
+        </StackPanel>
+    </Grid>
+</Window>

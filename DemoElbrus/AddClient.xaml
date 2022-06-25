@@ -1,0 +1,72 @@
+﻿<Window x:Class="DemoElbrus.AddClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoElbrus"
+        mc:Ignorable="d"
+        Title="AddClient" Height="405" Width="355">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FF76E383"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF498C51"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBlock Text="Назад" MouseDown="TextBlock_MouseDown" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label HorizontalAlignment="Center" Content="Добавление клиента"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="150px"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Фамилия:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="surnameTxt"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="Имя:"/>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="nameTxt"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="Отчество:"/>
+                <TextBox Grid.Column="1" Grid.Row="2" x:Name="patronomicTxt"/>
+                <Label Grid.Column="0" Grid.Row="3" Content="Серия паспорта:"/>
+                <TextBox Grid.Column="1" Grid.Row="3" x:Name="pasptSerTxt"/>
+                <Label Grid.Column="0" Grid.Row="4" Content="Номер паспорта:"/>
+                <TextBox Grid.Column="1" Grid.Row="4" x:Name="pasptNoTxt"/>
+                <Label Grid.Column="0" Grid.Row="5" Content="Дата рождения:"/>
+                <DatePicker Grid.Column="1" Grid.Row="5" x:Name="birthdayTxt"/>
+                <Label Grid.Column="0" Grid.Row="6" Content="Адрес:"/>
+                <TextBox Grid.Column="1" Grid.Row="6" x:Name="addressTxt"/>
+                <Label Grid.Column="0" Grid.Row="7" Content="Почта:"/>
+                <TextBox Grid.Column="1" Grid.Row="7" x:Name="emailTxt"/>
+                <Label Grid.Column="0" Grid.Row="8" Content="Пароль:"/>
+                <TextBox Grid.Column="1" Grid.Row="8" x:Name="passTxt"/>
+            </Grid>
+            <Button x:Name="logBtn" Content="Готово" Click="logBtn_Click" HorizontalAlignment="Right" Width="60px" Margin="0 10 0 0"/>
+        </StackPanel>
+    </Grid>
+</Window>
